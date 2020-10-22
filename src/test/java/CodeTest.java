@@ -9,6 +9,7 @@ public class CodeTest {
     byte[] codeReal={1,2,3,4,5};
     Assert.assertArrayEquals(codeReal,code.getCode());
   }
+
   @Test
   public void testGetLength(){
     Assert.assertEquals(code.getLenght(),5);

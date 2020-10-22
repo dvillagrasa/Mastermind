@@ -7,11 +7,11 @@ public class Code {
     }
 
     public byte[] getCode() {
-        return new byte[]{};
+        return this.code;
     }
 
     public int getLenght(){
-        return 0;
+        return code.length;
     }
 }
 
