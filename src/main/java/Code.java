@@ -1,4 +1,5 @@
 public class Code {
+
     private final byte[] code ;
 
     public Code(byte[] code) {
@@ -6,7 +7,11 @@ public class Code {
     }
 
     public byte[] getCode() {
-        return this.code;
+        return new byte[]{};
+    }
+
+    public int getLenght(){
+        return 0;
     }
 }
 
