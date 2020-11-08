@@ -1,4 +1,8 @@
+package CoreTest;
+
+import Core.Code;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 
@@ -39,9 +43,10 @@ public class CodeTest {
 
     //The code has a number greater than 127
     //byte[] bigColorArray = {8,127}; //no me deja el IDE poner un 128 a un byte
-    //Assertions.assertThrows(RuntimeException.class,() -> new Code(bigColorArray));
+    //Assertions.assertThrows(RuntimeException.class,() -> new Core.Code(bigColorArray));
   }
 
+  @Disabled
   @Test
   public void it_should_throw_RuntimeException_when_code_has_no_number() {
 
