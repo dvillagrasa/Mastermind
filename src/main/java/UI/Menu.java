@@ -20,7 +20,7 @@ public class Menu {
 
     public void display() {
         for (int i = 0; i < options.size(); i++) {
-            System.out.println(i + " - " + options.get(i).getName());
+            Printer.println(i + " - " + options.get(i).getName());
         }
     }
 
