@@ -21,7 +21,7 @@ public class BoardTest {
     }
 
     @Test
-    void testInvalidBoard() {
+    void it_should_throw_RuntimeException_when_board_is_invalid() {
         Assertions.assertThrows(RuntimeException.class,() -> new Board(null, (byte) 1));
         Assertions.assertThrows(RuntimeException.class,() -> new Board(secretCode, (byte) 0));
         Assertions.assertThrows(RuntimeException.class,() -> new Board(secretCode, (byte) -1));
