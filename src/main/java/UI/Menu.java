@@ -9,8 +9,9 @@ public class Menu {
         options.add(new Option(name,action));
     }
 
-    public void selectOption(int index) {
+    public boolean selectOption(int index) {
         options.get(index).execute();
+        return true;
     }
 
     public void display() {

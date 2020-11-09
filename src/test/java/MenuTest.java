@@ -21,10 +21,16 @@ public class MenuTest {
     @Test
     public void selectOption() {
         buildMenu();
-        menu.selectOption(0);
-        menu.selectOption(1);
-        menu.selectOption(2);
-        Assertions.assertTrue(true);
+        Assertions.assertTrue(menu.selectOption(0));
+        Assertions.assertTrue(menu.selectOption(1));
+        Assertions.assertTrue(menu.selectOption(2));
+    }
+
+    @Test
+    public void it_should_return_false_when_option_is_invalid() {
+        Assertions.assertFalse(menu.selectOption(-1));
+        Assertions.assertFalse(menu.selectOption(4));
+        Assertions.assertFalse(menu.selectOption(5));
     }
 
 
