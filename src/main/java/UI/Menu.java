@@ -10,8 +10,12 @@ public class Menu {
     }
 
     public boolean selectOption(int index) {
-        options.get(index).execute();
-        return true;
+        try {
+            options.get(index).execute();
+            return true;
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     public void display() {
