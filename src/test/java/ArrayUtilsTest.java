@@ -11,9 +11,12 @@ public class ArrayUtilsTest {
        byte numberOfColors = 2;
        byte lengthCode = 5;
        byte[] randomByteArray =  ArrayUtils.getRandomByteArray(numberOfColors,lengthCode);
+       Assertions.assertEquals(randomByteArray.length,lengthCode);
        byte[] randomByteArray2 = ArrayUtils.getRandomByteArray(numberOfColors,lengthCode);
        Assertions.assertNotEquals(Arrays.toString(randomByteArray), Arrays.toString(randomByteArray2));
     }
+
+
 
 
 }
