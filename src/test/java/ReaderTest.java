@@ -27,10 +27,10 @@ class ReaderTest {
 
   @Test
   void testcheckCodeLength() {
-    assertTrue(Reader.checkNumColors(4));
-    assertTrue(Reader.checkNumColors(6));
-    assertFalse(Reader.checkNumColors(-1));
-    assertFalse(Reader.checkNumColors(7));
+    assertTrue(Reader.checkCodeLength(4));
+    assertTrue(Reader.checkCodeLength(6));
+    assertFalse(Reader.checkCodeLength(-1));
+    assertFalse(Reader.checkCodeLength(7));
   }
 
   @Test

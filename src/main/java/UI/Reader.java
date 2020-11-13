@@ -24,7 +24,7 @@ public class Reader {
   }
 
   public static boolean checkCodeLength(int codel){
-
+    return codel >= 4 && codel <= 6;
   }
   //verificar que el numero esta entre los limites
   public static int readInt(String question) {
