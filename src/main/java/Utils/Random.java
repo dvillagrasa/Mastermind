@@ -2,7 +2,7 @@ package Utils;
 
 public class Random {
   public int nextInt(int to){
-
-    return 0;
+    java.util.Random random = new java.util.Random();
+    return random.nextInt(to);
   }
 }

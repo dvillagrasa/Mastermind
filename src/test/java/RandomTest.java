@@ -8,8 +8,8 @@ class RandomTest {
   @Test
   void nextInt() {
     Random random=new Random();
-    int num1=random.nextInt(5);
-    int num2=random.nextInt(5);
+    int num1=random.nextInt(1000);
+    int num2=random.nextInt(1000);
     assertNotEquals(num1,num2);
 
   }
