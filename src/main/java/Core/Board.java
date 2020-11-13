@@ -12,4 +12,5 @@ public class Board {
     public byte getNumberGuesses() {
         return numberGuesses;
     }
+
 }
