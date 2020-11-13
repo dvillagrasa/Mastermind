@@ -1,6 +1,8 @@
 .idea/gradle.xml
 .idea/misc.xml
 .idea/vcs.xml
+idea
+.idea
 .gradle
 .build
 .gradle/
@@ -12,3 +14,9 @@ build/reports/tests/test/classes/CoreTest.CodeTest.html
 .gradle/6.3/executionHistory/executionHistory.lock
 .gradle/6.3/fileHashes/fileHashes.lock
 .gradle/buildOutputCleanup/buildOutputCleanup.lock
+.project
+.idea
+bin
+.vscode
+.classpath
+.settings

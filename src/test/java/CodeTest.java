@@ -64,7 +64,12 @@ public class CodeTest {
 
   }
 
-
+  @Test
+  void testEqualCodes() {
+    Code code1 = new Code(new int[]{1,2});
+    Code code2 = new Code(new int[]{1,2});
+    Assertions.assertEquals(code1, code2);
+  }
 
 
 }
