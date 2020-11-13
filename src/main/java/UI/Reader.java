@@ -20,7 +20,7 @@ public class Reader {
 
   }
   public static boolean checkNumColors(int numc){
-
+    return numc >= 4 && numc <= 26;
   }
 
 

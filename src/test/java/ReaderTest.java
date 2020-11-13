@@ -19,7 +19,6 @@ class ReaderTest {
 
   @Test
   void testcheckNumColors() {
-    boolean cert=false;
     assertTrue(Reader.checkNumColors(4));
     assertTrue(Reader.checkNumColors(26));
     assertFalse(Reader.checkNumColors(27));
