@@ -1,4 +1,5 @@
 package UI;
+import java.util.Random;
 import java.util.Scanner;
 import UI.Printer;
 public class Reader {
