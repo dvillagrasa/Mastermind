@@ -8,12 +8,12 @@ public class ArrayUtilsTest {
 
     @Test
     public void getRandomIntArrayTest(){
-       byte numberOfColors = 2;
-       byte lengthCode = 5;
-       byte[] randomByteArray =  ArrayUtils.getRandomByteArray(numberOfColors,lengthCode);
-       Assertions.assertEquals(randomByteArray.length,lengthCode);
-       byte[] randomByteArray2 = ArrayUtils.getRandomByteArray(numberOfColors,lengthCode);
-       Assertions.assertNotEquals(Arrays.toString(randomByteArray), Arrays.toString(randomByteArray2));
+       int numberOfColors = 2;
+       int lengthCode = 5;
+       int[] randomIntArray =  ArrayUtils.getRandomIntArray(numberOfColors,lengthCode);
+       Assertions.assertEquals(randomIntArray.length,lengthCode);
+       int[] randomIntArray2 = ArrayUtils.getRandomIntArray(numberOfColors,lengthCode);
+       Assertions.assertNotEquals(randomIntArray, randomIntArray2);
     }
 
     @Test

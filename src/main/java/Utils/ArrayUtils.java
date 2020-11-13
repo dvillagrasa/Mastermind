@@ -5,11 +5,11 @@ import java.util.Random;
 
 public class ArrayUtils {
 
-    public static byte[] getRandomByteArray(byte numberOfColors, byte lengthCode){
+    public static int[] getRandomIntArray(int numberOfColors, int lengthCode){
         Random random = new Random();
-        byte[] code = new byte[lengthCode];
-        for (byte i = 0; i < code.length; i++) {
-            code[i] = (byte) random.nextInt();
+        int[] code = new int[lengthCode];
+        for (int i = 0; i < code.length; i++) {
+            code[i] = random.nextInt();
         }
         return code;
     }

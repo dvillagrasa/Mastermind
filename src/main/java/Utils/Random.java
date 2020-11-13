@@ -6,5 +6,6 @@ public class Random {
     return random.nextInt(to);
   }
 
-  
+
+
 }

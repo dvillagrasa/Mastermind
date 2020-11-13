@@ -2,15 +2,15 @@ package Core;
 
 public class Code {
 
-    private final byte[] code ;
+    private final int[] code ;
 
-    public Code(byte[] code) {
+    public Code(int[] code) {
         if(code == null)  throw new RuntimeException();
         if (hasInvalidNumber(code)) throw new RuntimeException();
         this.code = code;
     }
 
-    public byte[] getCode() {
+    public int[] getCode() {
         return this.code;
     }
 
@@ -19,8 +19,8 @@ public class Code {
     }
 
 
-    private boolean hasInvalidNumber(byte[] code){
-        for (byte color : code) {
+    private boolean hasInvalidNumber(int[] code){
+        for (int color : code) {
             if (color < 0) return true;
 
             if (Character.isDigit((char) color)) return true;

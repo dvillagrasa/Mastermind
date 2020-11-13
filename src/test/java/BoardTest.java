@@ -11,20 +11,20 @@ public class BoardTest {
 
     @BeforeEach
     void setUp() {
-      secretCode = new Code(new byte[]{1, 2, 3, 4});
+      secretCode = new Code(new int[]{1, 2, 3, 4});
     }
 
     @Test
     void testBoard() {
-        Board board = new Board(secretCode, (byte) 1);
+        Board board = new Board(secretCode,  1);
         Assertions.assertTrue(true);
     }
 
     @Test
     void it_should_throw_RuntimeException_when_board_is_invalid() {
-        Assertions.assertThrows(RuntimeException.class,() -> new Board(null, (byte) 1));
-        Assertions.assertThrows(RuntimeException.class,() -> new Board(secretCode, (byte) 0));
-        Assertions.assertThrows(RuntimeException.class,() -> new Board(secretCode, (byte) -1));
-        Assertions.assertThrows(RuntimeException.class,() -> new Board(secretCode, (byte) 200));
+        Assertions.assertThrows(RuntimeException.class,() -> new Board(null, 1));
+        Assertions.assertThrows(RuntimeException.class,() -> new Board(secretCode, 0));
+        Assertions.assertThrows(RuntimeException.class,() -> new Board(secretCode,  -1));
+        Assertions.assertThrows(RuntimeException.class,() -> new Board(secretCode,  2147483647+1));
     }
 }

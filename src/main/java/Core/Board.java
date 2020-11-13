@@ -1,15 +1,16 @@
 package Core;
 
 public class Board {
-    byte numberGuesses;
+    int numberGuesses;
 
-    public Board(Code secretCode, byte numberGuesses) {
+    public Board(Code secretCode, int numberGuesses) {
         if(secretCode == null)  throw new RuntimeException();
         if(numberGuesses <= 0)  throw new RuntimeException();
+
         this.numberGuesses = numberGuesses;
     }
 
-    public byte getNumberGuesses() {
+    public int getNumberGuesses() {
         return numberGuesses;
     }
 
