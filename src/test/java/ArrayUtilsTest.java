@@ -16,6 +16,13 @@ public class ArrayUtilsTest {
        Assertions.assertNotEquals(Arrays.toString(randomByteArray), Arrays.toString(randomByteArray2));
     }
 
+    @Test
+    public void getFullArrayTest(){
+        int content=-1;
+        int length=5;
+        int [] array={-1,-1,-1,-1,-1};
+        Assertions.assertArrayEquals(array,ArrayUtils.getFullArray(content,length));
+    }
 
 
 

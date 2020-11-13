@@ -22,6 +22,7 @@ public class Code {
     private boolean hasInvalidNumber(byte[] code){
         for (byte color : code) {
             if (color < 0) return true;
+
             if (Character.isDigit((char) color)) return true;
         }
         return false;
