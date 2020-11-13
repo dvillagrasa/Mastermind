@@ -1,5 +1,7 @@
 package Core;
 
+import java.util.Arrays;
+
 public class Code {
 
     private final int[] code ;
@@ -26,6 +28,14 @@ public class Code {
             if (Character.isDigit((char) color)) return true;
         }
         return false;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if ( obj == null ) return false;
+        if ( this == obj ) return true;
+        Code c = (Code) obj;
+        return Arrays.equals(this.code, c.code);
     }
 
 }

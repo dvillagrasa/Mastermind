@@ -67,8 +67,18 @@ public class CodeTest {
   @Test
   void testEqualCodes() {
     Code code1 = new Code(new int[]{1,2});
+    Assertions.assertNotEquals(code1,null);
+    Assertions.assertEquals(code1,code1);
+    Code code1b = code1;
+    Assertions.assertEquals(code1,code1b);
+
+    
     Code code2 = new Code(new int[]{1,2});
-    Assertions.assertEquals(code1, code2);
+
+    Assertions.assertEquals(code1, code2);  
+    
+    Code code3 = new Code(new int[]{1,1});
+    Assertions.assertNotEquals(code1, code3);  
   }
 
 
