@@ -23,7 +23,9 @@ public class Reader {
     return numc >= 4 && numc <= 26;
   }
 
+  public static boolean checkCodeLength(int codel){
 
+  }
   //verificar que el numero esta entre los limites
   public static int readInt(String question) {
     Printer.println(question);
