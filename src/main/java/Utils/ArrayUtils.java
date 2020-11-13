@@ -15,7 +15,8 @@ public class ArrayUtils {
     }
 
     public static int[] getFullArray(int content ,int length) {
-        int[] array = {1,1,1,1,1};
+        int[] array = new int[length];
+        Arrays.fill(array,content);
         return array;
     }
 }
