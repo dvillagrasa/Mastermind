@@ -1,5 +1,4 @@
-package Core;
-
+import Core.KeyPeg;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
