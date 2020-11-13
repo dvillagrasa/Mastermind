@@ -1,13 +1,14 @@
 package Core;
 
-public class Key {
+public class Keys {
   KeyPeg[] key;
 
-  public Key(KeyPeg[] key) {
+  public Keys(KeyPeg[] key) {
     this.key = key;
+
   }
 
   public int getLength(){
-    return key.length;
+    return -1;
   }
 }
