@@ -3,11 +3,15 @@ package Core;
 import Utils.ArrayUtils;
 
 public class CodeMaker {
-  byte colors;
-  byte length;
-  public CodeMaker(byte colors,byte length) {
+  int colors;
+  int length;
+  public CodeMaker(int colors,int length) {
     this.colors=colors;
     this.length=length;
+  }
+
+  public Code generateCode() {
+    return new Code(new int[]{});
   }
 
 
