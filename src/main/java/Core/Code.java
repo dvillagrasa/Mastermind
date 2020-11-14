@@ -47,6 +47,8 @@ public class Code {
         return false;
     }
 
-
+    public boolean correctPosition(int color, int pos) {
+        return code[pos] == color;
+    }
 }
 
