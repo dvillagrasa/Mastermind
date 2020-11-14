@@ -1,5 +1,9 @@
 package Core;
 
+import Core.Code;
+import Core.KeyPeg;
+import Core.Keys;
+
 public class Board {
     private int opportunities;
     private Code secretCode;

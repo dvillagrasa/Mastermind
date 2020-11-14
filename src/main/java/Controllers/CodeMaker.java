@@ -1,5 +1,6 @@
-package Core;
+package Controllers;
 
+import Core.Code;
 import Utils.ArrayUtils;
 
 public class CodeMaker {
