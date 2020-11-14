@@ -2,10 +2,8 @@ package ui;
 import java.util.Scanner;
 public class Reader {
 
-  private Reader() {
-  }
   
-  public static int readInt() {
+  public int readInt() {
     Scanner scan = new Scanner(System.in);
     int input;
     input = scan.nextInt();
@@ -15,7 +13,7 @@ public class Reader {
 
 
   //verificar que el numero esta entre los limites
-  public static int readInt(String question) {
+  public int readInt(String question) {
     int input=-1;
     boolean correct = false;
     do {
@@ -31,7 +29,7 @@ public class Reader {
     return input;
   }
 
-  public static int readInt(String question,int min, int max) {
+  public int readInt(String question,int min, int max) {
     boolean correct = false;
     int input;
     do {
