@@ -1,6 +1,7 @@
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import controllers.CodeBreaker;
@@ -31,8 +32,9 @@ public class CodeBreakerTest {
     Assertions.assertThrows(RuntimeException.class , () -> new CodeBreaker(8,8,null));   
   }
 
+  @Disabled //TODO: hay que hacer otras cosas primero. Luego cambiar Reader por CodeMaker
   @Test
   void testAskForGuessAGuess(){
-    Assertions.assertTrue(true);
+    Assertions.assertTrue(false);
   }
 }
