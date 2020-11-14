@@ -16,10 +16,15 @@ public class Board {
         return numberGuesses;
     }
 
+
     public Keys sendGuess(Code guess) {
-        KeyPeg[] keyPegArray =new KeyPeg[guess.getLenght()];
+        KeyPeg[] keyPegArray = new KeyPeg[guess.getLenght()];
         for (int i = 0; i < keyPegArray.length; i++) {
-            keyPegArray[i] = secretCode.getCode()[i] == guess.getCode()[i] ? KeyPeg.CorrectPosition : KeyPeg.DoesNotExistColor;
+            if(secretCode.correctPosition(guess.getCode()[i],i)){
+                keyPegArray[i]=KeyPeg.CorrectPosition;
+            }else if(secretCode.existColor(guess.getCode()[i])){
+                keyPegArray[i]=KeyPeg.ExistColor;
+            }else keyPegArray[i]=KeyPeg.DoesNotExistColor;
         }
         return new Keys(keyPegArray);
     }

@@ -97,4 +97,17 @@ public class CodeTest {
     }
   }
 
+  @Test
+  void testCorrectPosition(){
+    int[] colors = new int[]{1,1,2,4};
+    Code code= new Code(colors);
+    for (int i = 0; i < code.getLenght(); i++) {
+      Assertions.assertTrue(code.correctPosition(colors[i],i));
+    }
+    int[] colors2=new int[]{0,3,5,6};
+    for (int i = 0; i < code.getLenght(); i++) {
+      Assertions.assertFalse(code.correctPosition(colors2[i],i));
+    }
+  }
+
 }
