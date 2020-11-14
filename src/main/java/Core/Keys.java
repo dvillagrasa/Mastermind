@@ -22,6 +22,9 @@ public class Keys {
 
   @Override
   public boolean equals(Object obj) {
-    return true;
+    if ( obj == null ) return false;
+    if ( this == obj ) return true;
+    Keys c = (Keys) obj;
+    return Arrays.equals(this.keys, c.keys);
   }
 }
