@@ -38,7 +38,12 @@ public class BoardTest {
         Assertions.assertEquals(keys, board.sendGuess(code));
     }
 
-
+    @Test
+    void testGetNumerGuesses(){
+        Board board = new Board(secretCode,  1);
+        Assertions.assertNotEquals(3,board.getNumberGuesses());
+        Assertions.assertEquals(1,board.getNumberGuesses());
+    }
 
 }
 

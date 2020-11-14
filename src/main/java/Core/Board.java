@@ -13,7 +13,7 @@ public class Board {
     }
 
     public int getNumberGuesses() {
-        return numberGuesses;
+        return -1;
     }
 
 
