@@ -22,6 +22,8 @@ public class Board {
         for (int i = 0; i < keyPegArray.length; i++) {
             if(secretCode.correctPosition(guess.getCode()[i],i)){
                 keyPegArray[i]=KeyPeg.CorrectPosition;
+            }else if(secretCode.existColor(guess.getCode()[i])){
+                keyPegArray[i]=KeyPeg.ExistColor;
             }else return null;
         }
         return new Keys(keyPegArray);
