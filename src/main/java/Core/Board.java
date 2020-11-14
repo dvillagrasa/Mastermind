@@ -17,7 +17,13 @@ public class Board {
     }
 
     public Keys sendGuess(Code guess) {
-        return new Keys(new KeyPeg[]{KeyPeg.ExistColor});
+        KeyPeg[] keyPegArray =new KeyPeg[guess.getLenght()];
+        for (int i = 0; i < keyPegArray.length; i++) {
+            keyPegArray[i] = secretCode.getCode()[i] == guess.getCode()[i] ? KeyPeg.CorrectPosition : KeyPeg.DoesNotExistColor;
+        }
+        return new Keys(keyPegArray);
     }
+
+
 
 }
