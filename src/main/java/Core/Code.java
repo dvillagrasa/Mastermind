@@ -38,9 +38,15 @@ public class Code {
         return Arrays.equals(this.code, c.code);
     }
 
+
     public boolean existColor(int color) {
+        for (int secretColor : code) {
+            if (secretColor == color)
+                return true;
+        }
         return false;
     }
+
 
 }
 
