@@ -1,16 +1,27 @@
 package Core;
 
-public class Keys {
-  KeyPeg[] key;
+import java.util.Arrays;
 
-  public Keys(KeyPeg[] key) {
-    if(key.length==0) throw new RuntimeException();
-    if(key==null) throw new RuntimeException();
-    this.key = key;
+public class Keys {
+  KeyPeg[] keys;
+
+  public Keys(KeyPeg[] keys) {
+    if(keys.length==0) throw new RuntimeException();
+    if(keys==null) throw new RuntimeException();
+    this.keys = keys;
 
   }
 
   public int getLength(){
-    return key.length;
+    return keys.length;
+  }
+
+  public KeyPeg[] getKeys() {
+    return this.keys;
+  }
+
+  @Override
+  public boolean equals(Object obj) {
+    return true;
   }
 }

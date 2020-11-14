@@ -24,4 +24,19 @@ class KeysTest {
   public void it_should_throw_RuntimeException_when_key_length_is_null(){
     Assertions.assertThrows(RuntimeException.class, ()-> new Keys(null));
   }
+
+  @Test
+  void testEqualKeys() {
+    Keys keys1 = new Keys(new KeyPeg[]{KeyPeg.CorrectPosition,KeyPeg.DoesNotExistColor});
+    Assertions.assertNotEquals(null,keys1);
+    Assertions.assertEquals(keys1,keys1);
+    Keys keys1b = keys1;
+    Assertions.assertEquals(keys1,keys1b);
+
+    Keys keys2 = new Keys(new KeyPeg[]{KeyPeg.CorrectPosition,KeyPeg.DoesNotExistColor});
+    Assertions.assertEquals(keys1, keys2);
+
+    Keys keys3 = new Keys(new KeyPeg[]{KeyPeg.ExistColor,KeyPeg.DoesNotExistColor});
+    Assertions.assertNotEquals(keys1, keys3); 
+  }
 }
