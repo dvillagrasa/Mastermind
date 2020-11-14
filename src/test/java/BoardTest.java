@@ -47,6 +47,14 @@ public class BoardTest {
         Assertions.assertEquals(keys, board.sendGuess(code2));
     }
 
+    @Test
+    void testSendGuess_should_return_Keys_full_of_DoesNotExistColor_KeyPegs(){
+        Code code = new Code(new int[]{1,2,3,4});
+        Code code2 = new Code(new int[]{0,5,6,0});
+        Board board = new Board(code,1);
+        Keys keys =new Keys(new KeyPeg[]{KeyPeg.DoesNotExistColor,KeyPeg.DoesNotExistColor,KeyPeg.DoesNotExistColor,KeyPeg.DoesNotExistColor});
+        Assertions.assertEquals(keys, board.sendGuess(code2));
+    }
 
     @Test
     void testGetNumberGuesses(){
