@@ -2,10 +2,10 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import Core.Board;
-import Core.Code;
-import Core.KeyPeg;
-import Core.Keys;
+import core.Board;
+import core.Code;
+import core.KeyPeg;
+import core.Keys;
 
 
 public class BoardTest {

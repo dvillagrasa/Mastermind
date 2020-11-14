@@ -1,7 +1,7 @@
-package Controllers;
+package controllers;
 
-import Core.Code;
 import Utils.ArrayUtils;
+import core.Code;
 
 public class CodeMaker {
   int numberOfColors;

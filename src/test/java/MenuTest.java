@@ -1,6 +1,7 @@
-import UI.Menu;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import ui.Menu;
 
 
 public class MenuTest {

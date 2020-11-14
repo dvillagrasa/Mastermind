@@ -1,4 +1,6 @@
-package Controllers;
+package controllers;
+
+import core.Code;
 
 public class CodeBreaker {
   public int numOfColors;

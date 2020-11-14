@@ -1,7 +1,7 @@
 import org.junit.jupiter.api.Test;
 
-import Core.Code;
-import Controllers.CodeMaker;
+import controllers.CodeMaker;
+import core.Code;
 
 import org.junit.jupiter.api.Assertions;
 
