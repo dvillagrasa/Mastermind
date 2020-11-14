@@ -82,5 +82,19 @@ public class CodeTest {
     Assertions.assertNotEquals(code1, code3);  
   }
 
+  @Test
+
+  void testExistColor(){
+    int[] colors = new int[]{1,1,2,4};
+    Code code= new Code(colors);
+    for (int color : colors) {
+      Assertions.assertTrue(code.existColor(color));
+    }
+    int[] doesntExistColors = new int[]{0,5,6,3};
+
+    for (int color : colors) {
+      Assertions.assertFalse(code.existColor(doesntExistColors[color]));
+    }
+  }
 
 }
