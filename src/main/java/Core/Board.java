@@ -24,7 +24,7 @@ public class Board {
                 keyPegArray[i]=KeyPeg.CorrectPosition;
             }else if(secretCode.existColor(guess.getCode()[i])){
                 keyPegArray[i]=KeyPeg.ExistColor;
-            }else return null;
+            }else keyPegArray[i]=KeyPeg.DoesNotExistColor;
         }
         return new Keys(keyPegArray);
     }
