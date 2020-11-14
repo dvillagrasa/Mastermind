@@ -1,7 +1,8 @@
-import Core.Code;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
+
+import Core.Code;
 
 
 
@@ -27,7 +28,7 @@ public class CodeTest {
   public void testGetLength(){
     int[] codeReal={1,2,3,4,5};
     Code code = new Code(codeReal);
-    Assertions.assertEquals(code.getLenght(),5);
+    Assertions.assertEquals(5,code.getLenght());
   }
 
   @Test
@@ -44,11 +45,11 @@ public class CodeTest {
     //Assertions.assertThrows(RuntimeException.class,() -> new Core.Code(bigColorArray));
   }
 
-  @Disabled
+  @Disabled // TODO: Buscar la manera de detectar que no es un número
   @Test
   public void it_should_throw_RuntimeException_when_code_has_no_number() {
 
-    // TODO: Buscar la manera de detectar que no es un número
+    
     //The code has a character
     int[][] charInColorArrays = {
             {'r'},
@@ -67,7 +68,7 @@ public class CodeTest {
   @Test
   void testEqualCodes() {
     Code code1 = new Code(new int[]{1,2});
-    Assertions.assertNotEquals(code1,null);
+    Assertions.assertNotEquals(null,code1);
     Assertions.assertEquals(code1,code1);
     Code code1b = code1;
     Assertions.assertEquals(code1,code1b);

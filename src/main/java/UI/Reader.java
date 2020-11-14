@@ -1,8 +1,10 @@
 package UI;
-import java.util.Random;
 import java.util.Scanner;
-import UI.Printer;
 public class Reader {
+
+  private Reader() {
+  }
+  
   public static int readInt() {
     Scanner scan = new Scanner(System.in);
     int input;
@@ -38,5 +40,7 @@ public class Reader {
     } while(!correct);
     return input;
   }
+
+
 
 }

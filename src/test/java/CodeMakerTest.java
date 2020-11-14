@@ -1,8 +1,9 @@
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Assertions;
 
 import Core.Code;
 import Core.CodeMaker;
+
+import org.junit.jupiter.api.Assertions;
 
 
 class CodeMakerTest {

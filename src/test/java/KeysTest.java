@@ -1,7 +1,8 @@
-import Core.Keys;
-import Core.KeyPeg;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+
+import Core.KeyPeg;
+import Core.Keys;
 class KeysTest {
 
   @Test

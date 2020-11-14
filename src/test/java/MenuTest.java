@@ -34,7 +34,4 @@ public class MenuTest {
 
 
 
-    private void displayMenu() {
-        menu.display();
-    }
 }
