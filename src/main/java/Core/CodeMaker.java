@@ -3,15 +3,15 @@ package Core;
 import Utils.ArrayUtils;
 
 public class CodeMaker {
-  int colors;
-  int length;
-  public CodeMaker(int colors,int length) {
-    this.colors=colors;
-    this.length=length;
+  int numberOfColors;
+  int lengthCode;
+  public CodeMaker(int numberOfColors,int lengthCode) {
+    this.numberOfColors=numberOfColors;
+    this.lengthCode=lengthCode;
   }
 
   public Code generateCode() {
-    return new Code(new int[]{});
+    return new Code(ArrayUtils.getRandomIntArray(numberOfColors, lengthCode)); 
   }
 
 

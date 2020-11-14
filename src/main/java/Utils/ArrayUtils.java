@@ -1,15 +1,15 @@
 package Utils;
 
 import java.util.Arrays;
-import java.util.Random;
+
 
 public class ArrayUtils {
 
     public static int[] getRandomIntArray(int numberOfColors, int lengthCode){
-        Random random = new Random();
+        Utils.Random random = new Utils.Random();
         int[] code = new int[lengthCode];
         for (int i = 0; i < code.length; i++) {
-            code[i] = random.nextInt();
+            code[i] = random.nextInt(numberOfColors);
         }
         return code;
     }
