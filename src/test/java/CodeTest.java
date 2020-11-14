@@ -83,7 +83,6 @@ public class CodeTest {
   }
 
   @Test
-
   void testExistColor(){
     int[] colors = new int[]{1,1,2,4};
     int[] doesntExistColors = new int[]{0,5,0,3};

@@ -1,4 +1,4 @@
-import Core.CodeBreaker;
+import Controllers.CodeBreaker;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -15,9 +15,15 @@ public class CodeBreakerTest {
   }
   @Test
   void testCodeBreaker(){
-    CodeBreaker code =new CodeBreaker(numCol,lengthCode);
-    Assertions.assertEquals(5,code.numOfColors);
-    Assertions.assertEquals(6,code.lengthCode);
+    CodeBreaker codeBreaker =new CodeBreaker(numCol,lengthCode);
+    Assertions.assertEquals(5,codeBreaker.numOfColors);
+    Assertions.assertEquals(6,codeBreaker.lengthCode);
+    //Invalid new instances
+    Assertions.assertThrows(RuntimeException.class , () -> new CodeBreaker(0,8));
+    Assertions.assertThrows(RuntimeException.class , () -> new CodeBreaker(-1,8));
+    Assertions.assertThrows(RuntimeException.class , () -> new CodeBreaker(5,0));
+    Assertions.assertThrows(RuntimeException.class , () -> new CodeBreaker(5,-1));
+    Assertions.assertThrows(RuntimeException.class , () -> new CodeBreaker(-1,0));  
   }
 
 }

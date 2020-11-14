@@ -1,19 +1,19 @@
 package Core;
 
 public class Board {
-    private int numberGuesses;
+    private int opportunities;
     private Code secretCode;
-
-    public Board(Code secretCode, int numberGuesses) {
+    
+    public Board(Code secretCode, int opportunities) {
         if(secretCode == null)  throw new RuntimeException();
-        if(numberGuesses <= 0)  throw new RuntimeException();
+        if(opportunities <= 0)  throw new RuntimeException();
 
-        this.numberGuesses = numberGuesses;
+        this.opportunities = opportunities;
         this.secretCode = secretCode;
     }
 
-    public int getNumberGuesses() {
-        return numberGuesses;
+    public int getOpportunities() {
+        return opportunities;
     }
 
 
