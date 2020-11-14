@@ -1,12 +1,11 @@
-import Core.KeyPeg;
-import Core.Keys;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import Core.Board;
 import Core.Code;
-
+import Core.KeyPeg;
+import Core.Keys;
 
 
 public class BoardTest {
@@ -30,6 +29,7 @@ public class BoardTest {
         Assertions.assertThrows(RuntimeException.class,() -> new Board(secretCode,  -1));
         Assertions.assertThrows(RuntimeException.class,() -> new Board(secretCode,  2147483647+1));
     }
+
     @Test
     void testSendGuess_should_return_Keys_full_of_CorrectPosition_KeyPegs() {
         Code code = new Code(new int[]{1,2,3,4});
@@ -37,4 +37,8 @@ public class BoardTest {
         Keys keys =new Keys(new KeyPeg[]{KeyPeg.CorrectPosition,KeyPeg.CorrectPosition,KeyPeg.CorrectPosition,KeyPeg.CorrectPosition});
         Assertions.assertEquals(keys, board.sendGuess(code));
     }
+
+
+
 }
+
