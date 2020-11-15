@@ -10,8 +10,8 @@ public class CodeMakerUserTest {
     
     @Test
     void testGenerateCode() {
-        int[] colorArray = new int[]{0,1,2,3}
+        int[] colorArray = new int[]{0,1,2,3};
         CodeMakerUser codeMaker = new CodeMakerUser(5,4,new MockReader(colorArray));       
-        Assertions.assertNotEquals(new Code(colorArray), codeMaker.generateCode());
+        Assertions.assertEquals(new Code(colorArray), codeMaker.generateCode());
     }
 }
