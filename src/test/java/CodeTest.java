@@ -141,7 +141,8 @@ public class CodeTest {
 
 
   /*Test de Caixa Negra:
-   * Particions equivalents(valides)*/
+   * Particions equivalents(valides) i
+   * valors limit (implicit ja que es proben totes les possiblitats)*/
   @Test
   void testCorrectPosition(){
     int[] colors = new int[]{1,1,2,4};
