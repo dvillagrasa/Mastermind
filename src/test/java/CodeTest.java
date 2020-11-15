@@ -9,7 +9,8 @@ import core.Code;
 public class CodeTest {
 
 
-
+  /*Test de Caixa Negra:
+   * Particions equivalents(valides) i valors limit */
   @Test
   public void testGetCode(){
     int[][] validCodes= {
@@ -23,12 +24,26 @@ public class CodeTest {
     }
 
   }
-
+  /*Test de Caixa Negra:
+   * Particions equivalents(valides) i valors limit */
   @Test
   public void testGetLength(){
-    int[] codeReal={1,2,3,4,5};
-    Code code = new Code(codeReal);
-    Assertions.assertEquals(5,code.getLenght());
+    int[][] validCodes= {
+        {1,2,3,4,5},
+        {0},
+        {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15}
+    };
+    for (int[] validCode : validCodes){
+      Code code = new Code(validCode);
+      Assertions.assertEquals(validCode,code.getCode());
+    }
+
+  }
+
+  @Test
+    public void it_should_throw_RuntimeException_when_code_length_is_invalid(){
+    int[] codeReal={};
+    Assertions.assertThrows(RuntimeException.class,() -> new Code(codeReal));
   }
 
   @Test

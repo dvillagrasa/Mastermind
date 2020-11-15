@@ -17,15 +17,15 @@ public class BoardTest {
     }
 
     /*Test de Caixa Negra:
-     * Particions equivalents*/
+     * Particions equivalents (correcta inicialització)*/
     @Test
     void testBoard() {
         Board board = new Board(secretCode,  1);
         Assertions.assertTrue(true);
     }
 
-    /*Test de Caixa Negra i Caixa blanca:
-     * Valors limit*/
+    /*Test de Caixa Negra:
+     * Particions equivalents(valors que donguin error)  */
     @Test
     void it_should_throw_RuntimeException_when_board_is_invalid() {
         Assertions.assertThrows(RuntimeException.class,() -> new Board(null, 1));
@@ -33,7 +33,8 @@ public class BoardTest {
         Assertions.assertThrows(RuntimeException.class,() -> new Board(secretCode,  -1));
         Assertions.assertThrows(RuntimeException.class,() -> new Board(secretCode,  2147483647+1));
     }
-
+    /*Test de Caixa Negra:
+     * Particions equivalents(cas en que s'ha encertat color i posició = WIN) */
     @Test
     void testSendGuess_should_return_Keys_full_of_CorrectPosition_KeyPegs() {
         Code code = new Code(new int[]{1,2,3,4});
@@ -41,7 +42,8 @@ public class BoardTest {
         Keys keys =new Keys(new KeyPeg[]{KeyPeg.CorrectPosition,KeyPeg.CorrectPosition,KeyPeg.CorrectPosition,KeyPeg.CorrectPosition});
         Assertions.assertEquals(keys, board.sendGuess(code));
     }
-
+    /*Test de Caixa Negra:
+     * Particions equivalents(cas en que s'ha encertat color però no posicio) */
     @Test
     void testSendGuess_should_return_Keys_full_of_ExistColor_KeyPegs(){
         Code code = new Code(new int[]{1,2,3,4});
@@ -50,7 +52,8 @@ public class BoardTest {
         Keys keys =new Keys(new KeyPeg[]{KeyPeg.ExistColor,KeyPeg.ExistColor,KeyPeg.ExistColor,KeyPeg.ExistColor});
         Assertions.assertEquals(keys, board.sendGuess(code2));
     }
-
+    /*Test de Caixa Negra:
+     * Particions equivalents(cas en que no s'ha encertat res)  */
     @Test
     void testSendGuess_should_return_Keys_full_of_DoesNotExistColor_KeyPegs(){
         Code code = new Code(new int[]{1,2,3,4});
