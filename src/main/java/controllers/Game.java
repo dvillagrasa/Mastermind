@@ -26,6 +26,14 @@ public class Game {
         return this.attempts;
     }
 
+    public int getLengthCode() {
+        return codeMaker.getLengthCode();
+    }
+
+    public int getNumOfColors() {
+        return codeMaker.getNumberOfColors();
+    }
+
     
    
 
