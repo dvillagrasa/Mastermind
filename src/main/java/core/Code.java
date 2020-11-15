@@ -8,6 +8,7 @@ public class Code {
 
     public Code(int[] code) {
         if(code == null)  throw new RuntimeException();
+        if(code.length<=0) throw new RuntimeException();
         if (hasInvalidNumber(code)) throw new RuntimeException();
         this.code = code;
     }
