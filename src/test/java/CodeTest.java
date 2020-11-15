@@ -85,8 +85,7 @@ public class CodeTest {
   }
 
   /*Test de Caixa Negra:
-   * PairWise testing, comprobem totes les
-   * posibles combinacions de parelles codis */
+   *Particions equivalents (valides) */
   @Test
   void testEqualCodes() {
     Code code1 = new Code(new int[]{1,2});
