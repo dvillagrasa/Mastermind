@@ -12,5 +12,13 @@ public abstract class CodeMaker {
     }
 
     public abstract Code generateCode();
+
+    public int getNumberOfColors() {
+      return numberOfColors;
+    }
+
+    public int getLengthCode() {
+      return lengthCode;
+    }
     
 }

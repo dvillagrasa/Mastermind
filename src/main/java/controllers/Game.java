@@ -19,6 +19,12 @@ public class Game {
         board = new Board(codeMaker.generateCode(), this.attempts);
     }
    
+    public int getAttempts() {
+        return this.attempts;
+    }
+
+    
+   
 
     
 }
