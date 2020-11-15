@@ -39,13 +39,16 @@ public class CodeTest {
     }
 
   }
-
+  /*Test de Caixa Negra:
+   * Particions equivalents(invalides) i valors exteriors a frontera */
   @Test
     public void it_should_throw_RuntimeException_when_code_length_is_invalid(){
     int[] codeReal={};
     Assertions.assertThrows(RuntimeException.class,() -> new Code(codeReal));
   }
 
+  /*Test de Caixa Negra:
+   * Particions equivalents(invalides) i valors exteriors a frontera */
   @Test
   public void it_should_throw_RuntimeException_when_code_is_invalid() {
     //The code has a null array
@@ -60,11 +63,13 @@ public class CodeTest {
     //Assertions.assertThrows(RuntimeException.class,() -> new Core.Code(bigColorArray));
   }
 
-  @Disabled // TODO: Buscar la manera de detectar que no es un número
+  /*Test de Caixa Negra:
+   * Particions equivalents(invalides)
+   * (Deshabilitat ja que no sabem com implementar-ho)*/
+  @Disabled
   @Test
   public void it_should_throw_RuntimeException_when_code_has_no_number() {
 
-    
     //The code has a character
     int[][] charInColorArrays = {
             {'r'},
@@ -77,33 +82,36 @@ public class CodeTest {
     };
     for (int[] charInColorArray : charInColorArrays)
       Assertions.assertThrows(RuntimeException.class,() -> new Code(charInColorArray));
-
   }
 
+  /*Test de Caixa Negra:
+   * PairWise testing, comprobem totes les
+   * posibles combinacions de parelles codis */
   @Test
   void testEqualCodes() {
     Code code1 = new Code(new int[]{1,2});
     Assertions.assertNotEquals(null,code1);
     Assertions.assertEquals(code1,code1);
+
     Code code1b = code1;
     Assertions.assertEquals(code1,code1b);
-
     
     Code code2 = new Code(new int[]{1,2});
-
     Assertions.assertEquals(code1, code2);  
     
     Code code3 = new Code(new int[]{1,1});
     Assertions.assertNotEquals(code1, code3);  
   }
 
+  /*Test de Caixa Negra:
+   * Particions equivalents (valides) */
   @Test
   void testExistColor(){
     int[] colors = new int[]{1,1,2,4};
     int[] doesntExistColors = new int[]{0,5,0,3};
     Code code= new Code(colors);
     for (int color : colors) {
-      Assertions.assertTrue(code.existColor(color));
+      Assertions.assertTrue(code.existColor(color));//1r cas
     }
 
     for (int color : doesntExistColors) {
@@ -111,6 +119,29 @@ public class CodeTest {
     }
   }
 
+  /*Test de Caixa Blanca:
+   *Loop testing (comprobem diferents casos on el color
+   * es troba a la 1a,2a, penultima i ultima posició) */
+  @Test
+  void loopTestingExistColor(){
+    int[][] loopTesting = {
+        {1,5,5,5},
+        {5,1,5,5},
+        {5,5,1,5},
+        {5,5,5,1}
+    };
+    for (int[] color : loopTesting) {
+      Code code= new Code(color);
+      Assertions.assertTrue(code.existColor(1));
+    }
+    Code code= new Code(new int[]{0,0,0,0});
+    Assertions.assertFalse(code.existColor(1));
+
+  }
+
+
+  /*Test de Caixa Negra:
+   * Particions equivalents(valides)*/
   @Test
   void testCorrectPosition(){
     int[] colors = new int[]{1,1,2,4};

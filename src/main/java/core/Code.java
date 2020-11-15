@@ -39,7 +39,7 @@ public class Code {
         return Arrays.equals(this.code, c.code);
     }
 
-    //TODO: APLICAR UN LOOP TESTING
+
     public boolean existColor(int color) {
         for (int secretColor : code) {
             if (secretColor == color)
