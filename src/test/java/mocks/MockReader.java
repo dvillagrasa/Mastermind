@@ -30,7 +30,9 @@ public class MockReader extends Reader {
     }
     
     private int nextResponse() {
-        return isSequence ? responses[lastResponse % responses.length] : response;
+        int actualResponse = isSequence ? responses[lastResponse % responses.length] : response;
+        lastResponse++;
+        return actualResponse;
     }
 
     @Override
@@ -40,12 +42,12 @@ public class MockReader extends Reader {
 
     @Override
     public int readInt(String question) {
-        return this.readInt(question);
+        return this.readInt();
     }
 
     @Override
     public int readInt(String question, int min, int max) {
-        return this.readInt(question, min, max);
+        return readInt(question);
     }
 
     
