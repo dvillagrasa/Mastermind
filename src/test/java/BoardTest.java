@@ -16,12 +16,16 @@ public class BoardTest {
       secretCode = new Code(new int[]{1, 2, 3, 4});
     }
 
+    /*Test de Caixa Negra:
+     * Particions equivalents*/
     @Test
     void testBoard() {
         Board board = new Board(secretCode,  1);
         Assertions.assertTrue(true);
     }
 
+    /*Test de Caixa Negra i Caixa blanca:
+     * Valors limit*/
     @Test
     void it_should_throw_RuntimeException_when_board_is_invalid() {
         Assertions.assertThrows(RuntimeException.class,() -> new Board(null, 1));
