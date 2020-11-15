@@ -33,6 +33,11 @@ public class BoardTest {
         Assertions.assertThrows(RuntimeException.class,() -> new Board(secretCode,  -1));
         Assertions.assertThrows(RuntimeException.class,() -> new Board(secretCode,  2147483647+1));
     }
+
+    /*Test de Caixa Blanca:
+     * Decision Coverage (per la conjunt dels 3 tests seguents,
+     * totes les decisions acabaràn prenent els valors true o false*/
+
     /*Test de Caixa Negra:
      * Particions equivalents(cas en que s'ha encertat color i posició = WIN) */
     @Test
@@ -52,8 +57,13 @@ public class BoardTest {
         Keys keys =new Keys(new KeyPeg[]{KeyPeg.ExistColor,KeyPeg.ExistColor,KeyPeg.ExistColor,KeyPeg.ExistColor});
         Assertions.assertEquals(keys, board.sendGuess(code2));
     }
-    /*Test de Caixa Negra:
-     * Particions equivalents(cas en que no s'ha encertat res)  */
+    /*Test de Caixa Blanca:
+     * Path Coverage (Pasa per els tots condicionals anteriors
+     * fins que finalment al arribar al ultim condicional, es
+     * cumpleix i entra)*/
+
+    /*Test de Caixa Negra :
+     * Particions equivalents(valides:Scas en que no s'ha encertat res)  */
     @Test
     void testSendGuess_should_return_Keys_full_of_DoesNotExistColor_KeyPegs(){
         Code code = new Code(new int[]{1,2,3,4});
@@ -62,9 +72,10 @@ public class BoardTest {
         Keys keys =new Keys(new KeyPeg[]{KeyPeg.DoesNotExistColor,KeyPeg.DoesNotExistColor,KeyPeg.DoesNotExistColor,KeyPeg.DoesNotExistColor});
         Assertions.assertEquals(keys, board.sendGuess(code2));
     }
-
+    /*Test de Caixa Negra :
+     * Particions equivalents(valides)  */
     @Test
-    void testGetNumberGuesses(){
+    void testGetNumberOpportunities(){
         Board board = new Board(secretCode,  1);
         Assertions.assertNotEquals(3,board.getOpportunities());
         Assertions.assertEquals(1,board.getOpportunities());

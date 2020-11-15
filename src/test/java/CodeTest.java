@@ -121,7 +121,7 @@ public class CodeTest {
 
   /*Test de Caixa Blanca:
    *Loop testing (comprobem diferents casos on el color
-   * es troba a la 1a,2a, penultima i ultima posició) */
+   * es troba a la 1a,2a, penultima i ultima posició)  */
   @Test
   void loopTestingExistColor(){
     int[][] loopTesting = {

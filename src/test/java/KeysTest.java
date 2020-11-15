@@ -5,6 +5,8 @@ import core.KeyPeg;
 import core.Keys;
 class KeysTest {
 
+  /*Test de Caixa Negra:
+   * Particions equivalents(valides)*/
   @Test
   void testgetLength() {
     Keys keys =new Keys(new KeyPeg[]{KeyPeg.ExistColor});
@@ -14,17 +16,21 @@ class KeysTest {
     Assertions.assertEquals(2,keys2.getLength());
     Assertions.assertEquals(3,keys3.getLength());
   }
-
+  /*Test de Caixa Negra:
+   * Particions equivalents(invalides)*/
   @Test
   public void it_should_throw_RuntimeException_when_key_length_is_0(){
     Assertions.assertThrows(RuntimeException.class, ()-> new Keys(new KeyPeg[]{}));
   }
-
+  /*Test de Caixa Negra:
+   * Particions equivalents(invalides)*/
   @Test
   public void it_should_throw_RuntimeException_when_key_length_is_null(){
     Assertions.assertThrows(RuntimeException.class, ()-> new Keys(null));
   }
 
+  /*Test de Caixa Negra:
+   *Particions equivalents(valides)*/
   @Test
   void testEqualKeys() {
     Keys keys1 = new Keys(new KeyPeg[]{KeyPeg.CorrectPosition,KeyPeg.DoesNotExistColor});

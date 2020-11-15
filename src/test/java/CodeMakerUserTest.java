@@ -6,8 +6,9 @@ import core.Code;
 import mocks.MockReader;
 
 public class CodeMakerUserTest {
-    
-    
+
+    /*Test de Caixa Negra:
+     * Particions equivalents(valides)*/
     @Test
     void testGenerateCode() {
         int[] colorArray = new int[]{0,1,2,3};

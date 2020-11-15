@@ -8,6 +8,8 @@ import org.junit.jupiter.api.Assertions;
 
 class CodeMakerComputerTest {
 
+  /*Test de Caixa Negra:
+   * Particions equivalents(valides)*/
   @Test
   public void testGenerateCode() {
       CodeMakerComputer codeMaker = new CodeMakerComputer(2,5);

@@ -17,7 +17,8 @@ public class MenuTest {
     private void dummyMethod() {
 
     }
-
+    /*Test de Caixa Negra:
+     *Particions equivalents(valides)*/
     @Test
     public void selectOption() {
         buildMenu();
@@ -25,7 +26,8 @@ public class MenuTest {
         Assertions.assertTrue(menu.selectOption(1));
         Assertions.assertTrue(menu.selectOption(2));
     }
-
+    /*Test de Caixa Negra:
+     *Particions equivalents(valides)*/
     @Test
     public void it_should_return_false_when_option_is_invalid() {
         Assertions.assertFalse(menu.selectOption(-1));

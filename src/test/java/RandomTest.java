@@ -5,6 +5,9 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class RandomTest {
 
+
+  /*Test de Caixa Negra:
+   * Particions equivalents(valides)*/
   @Test
   void nextInt() {
     Random random=new Random();
