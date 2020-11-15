@@ -1,3 +1,4 @@
+import core.Code;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -5,6 +6,19 @@ import core.KeyPeg;
 import core.Keys;
 class KeysTest {
 
+
+  @Test
+  public void testGetKeys(){
+    KeyPeg[][] keys= {
+        {KeyPeg.CorrectPosition,KeyPeg.DoesNotExistColor},
+        {KeyPeg.CorrectPosition},
+        {KeyPeg.CorrectPosition,KeyPeg.DoesNotExistColor,KeyPeg.ExistColor}};
+    for (KeyPeg[] key : keys){
+      Keys key1= new Keys(key);
+      Assertions.assertArrayEquals(key,key1.getKeys());
+    }
+
+  }
   /*Test de Caixa Negra:
    * Particions equivalents(valides)*/
   @Test
