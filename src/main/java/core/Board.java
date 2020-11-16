@@ -5,16 +5,19 @@ public class Board {
     private Code secretCode;
     private Code[] attempts;
     private Keys[] keys;
+    private int maxAttempts;
     
     public Board(Code secretCode, int numAttempts) {
         if(secretCode == null)  throw new RuntimeException();
         if(numAttempts <= 0)  throw new RuntimeException();
 
         this.numAttempts = numAttempts;
+        maxAttempts = numAttempts;
         this.secretCode = secretCode;
 
         attempts = new Code[numAttempts];
         keys = new Keys[numAttempts];
+        
     }
 
     public int getNumAttempts() {
@@ -25,7 +28,7 @@ public class Board {
     public Keys sendGuess(Code guess) {
         if(numAttempts == 0) throw new RuntimeException();
 
-        int actualPosition = keys.length - numAttempts;
+        int actualPosition = maxAttempts - numAttempts;
         
         attempts[actualPosition] = guess;
 
@@ -44,7 +47,7 @@ public class Board {
     }
 
     public boolean isSecretCode(Code guess) {
-        return this.secretCode == guess;
+        return this.secretCode.equals(guess);
     }
 
     public Code[] getAttempts() {

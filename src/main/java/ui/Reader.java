@@ -77,6 +77,14 @@ public class Reader {
     return isYes;
   }
 
+  public void pressAnyKey() {
+    ui.Printer.println("Press Enter key to continue...");
+    try {
+      System.in.read();
+    } catch (Exception e) {
+      // ¯\_(ツ)_/¯
+    }    
+  }
   
 
 }

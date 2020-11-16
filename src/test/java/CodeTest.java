@@ -100,6 +100,10 @@ public class CodeTest {
     
     Code code3 = new Code(new int[]{1,1});
     Assertions.assertNotEquals(code1, code3);  
+
+    int[] colorsArray = {5,5,5,5};
+    Code code4 = new Code(colorsArray);
+    Assertions.assertEquals(code4, new Code(colorsArray));
   }
 
   /*Test de Caixa Negra:

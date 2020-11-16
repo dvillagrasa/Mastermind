@@ -27,8 +27,9 @@ public class Printer {
     }
 
     public static void printBoard(Board board) {
+        println("");
         println("BOARD:");
-        for (int i = 0; i < board.getNumAttempts(); i++) {
+        for (int i = 0; i < board.getAttempts().length; i++) {
             Code attempt = board.getAttempts()[i];
             if (attempt != null) {
                 printCode(attempt);
@@ -37,7 +38,7 @@ public class Printer {
             if (keys != null) {
                 printKeys(keys);
             }
-            
+            println("");
         }
     }
 
@@ -67,6 +68,26 @@ public class Printer {
         if(keyPeg == KeyPeg.DoesNotExistColor)
             character = " "; 
         print(character);
+    }
+
+    public static void cleanScreen() {
+        try
+        {
+            final String os = System.getProperty("os.name");
+    
+            if (os.contains("Windows"))
+            {
+                Runtime.getRuntime().exec("cls");
+            }
+            else
+            {
+                Runtime.getRuntime().exec("clear");
+            }
+        }
+        catch (final Exception e)
+        {
+            //  ¯\_(ツ)_/¯
+        }
     }
 
 }

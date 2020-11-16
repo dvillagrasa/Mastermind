@@ -1,6 +1,7 @@
 package controllers;
 
 import core.Board;
+import core.Code;
 
 public class Game {
 
@@ -8,6 +9,10 @@ public class Game {
     private CodeMaker codeMaker;
     private Board board;
     private int attempts;
+    private boolean gameOver = false;
+    private boolean codeBreakerHasWon = false;
+    
+    
 
     public Game(CodeMaker codeMaker, CodeBreaker codeBreaker,int attempts) {
         if(codeMaker.getLengthCode() != codeBreaker.getLengthCode()) throw new RuntimeException();
@@ -20,6 +25,29 @@ public class Game {
 
     public void start() {
         board = new Board(codeMaker.generateCode(), this.attempts);
+        play();
+    }
+
+    private boolean therAreAttempts() {
+        return board.getNumAttempts() > 0 ;
+    } 
+
+    private void play() {        
+        while(!isGameOver()) {
+            askForGuess();
+        }        
+    }
+
+   
+    private void askForGuess() {
+        Code guess = codeBreaker.askForGuess();
+        codeBreakerHasWon = board.isSecretCode(guess);
+        codeBreaker.receiveKeys(board.sendGuess(guess));  
+        displayBoard();
+    }
+
+    private void displayBoard() {
+        ui.Printer.printBoard(board);
     }
 
     public int getAttempts() {
@@ -34,8 +62,16 @@ public class Game {
         return codeMaker.getNumberOfColors();
     }
 
-    
+    public boolean isGameOver() {
+        return hasCodeBreakerLost() || hasCodeBreakerWon();
+    }
    
+    public boolean hasCodeBreakerWon() {
+        return codeBreakerHasWon;
+    }
 
+    public boolean hasCodeBreakerLost() {
+        return !therAreAttempts();
+    }
     
 }

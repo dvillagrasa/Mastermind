@@ -21,6 +21,9 @@ public class GameMaker {
     It is a method that asks the user for the parameters that will configure the new game.
     */
     public Game createGame() {
+        ui.Printer.cleanScreen();
+        ui.Printer.println("");
+        ui.Printer.println("GAME CREATOR");
         String questionNumColors = String.format("Number of possible colors [%d..%d]:", minPosibleColors, maxPosibleColors);
         int numOfColors = this.reader.readInt(questionNumColors, minPosibleColors, maxPosibleColors);
 

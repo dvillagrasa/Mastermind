@@ -13,6 +13,8 @@ public class CodeMakerComputer extends CodeMaker{
 
   @Override
   public Code generateCode() {
+    ui.Printer.println("");
+    ui.Printer.println("Computer has generated the Secret Code");
     return new Code(ArrayUtils.getRandomIntArray(super.numberOfColors, super.lengthCode)); 
   }
 

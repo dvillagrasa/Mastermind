@@ -97,11 +97,13 @@ public class BoardTest {
      * Particions equivalents */
     @Test
     void testIsSecretCode() {
-        Code code1 = new Code(new int[]{5,5,5,5});
+        int[] colorsArray = new int[]{5,5,5,5};
+        Code code1 = new Code(colorsArray);
         Code code2 = new Code(new int[]{5,4,5,5});
         Board board = new Board(code1,1);
         Assertions.assertTrue(board.isSecretCode(code1));
         Assertions.assertFalse(board.isSecretCode(code2));
+        Assertions.assertTrue(board.isSecretCode(new Code(colorsArray)));
     }
 }
 

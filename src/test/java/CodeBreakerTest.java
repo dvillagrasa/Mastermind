@@ -50,9 +50,5 @@ public class CodeBreakerTest {
   }
 
 
-  @Disabled //TODO: hay que hacer otras cosas primero. Luego cambiar Reader por CodeMaker
-  @Test
-  void testAskForGuessAGuess(){
-    Assertions.assertTrue(false);
-  }
+ 
 }

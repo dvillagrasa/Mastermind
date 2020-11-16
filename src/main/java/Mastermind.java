@@ -21,10 +21,14 @@ public class Mastermind {
     }
 
     public void run(){
-        Printer.println("MASTERMIND");
         buildMenu();
-        displayMenu();
-        selectOption();
+        while(true){
+            ui.Printer.cleanScreen();
+            Printer.println("MASTERMIND");
+            displayMenu();
+            selectOption();
+            if(false) break;
+        }        
     }
 
     public void displayMenu(){
@@ -33,6 +37,13 @@ public class Mastermind {
     private void newGame(){
         Game game = gameMaker.createGame();
         game.start();
+        displayGameOver(game);
+        reader.pressAnyKey();
+    }
+
+    private void displayGameOver(Game game){
+        if(game.hasCodeBreakerLost()) ui.Printer.println("CodeBreaker has LOST");
+        if(game.hasCodeBreakerWon()) ui.Printer.println("CodeBreaker has WON");    
     }
 
     public void selectOption() {
