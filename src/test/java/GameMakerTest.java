@@ -7,7 +7,8 @@ import mocks.MockReader;
 
 public class GameMakerTest {
 
-
+    /*Test de Caixa Blanca:
+     * Decision Coverage que prova les dues opcions CodeMaker (Usuari o Computer)*/
     @Test
     void testCreateGame() {
         // numOfColors, lengthCode, attempts
