@@ -7,16 +7,18 @@ import ui.Reader;
 public class mockCodeBreaker extends CodeBreaker {
 
     Code[] guesses;
+    int nextGuess = 0;
 
-    public mockCodeBreaker(int numOfColors, int lengthCode, Reader reader,Code[] guesses) {
-        super(numOfColors, lengthCode, reader);
+    public mockCodeBreaker(int numOfColors, int lengthCode,Code[] guesses) {
+        super(numOfColors, lengthCode, new Reader());
         this.guesses = guesses;
     }
 
     @Override
     public Code askForGuess() {
-        // TODO Auto-generated method stub
-        return super.askForGuess();
+        Code guess = guesses[nextGuess];
+        nextGuess++;
+        return guess;
     }
     
 }
