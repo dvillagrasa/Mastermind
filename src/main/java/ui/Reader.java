@@ -42,7 +42,7 @@ public class Reader {
     Scanner scan = new Scanner(System.in);
     char input;
     input = scan.next().charAt(0);
-    scan.close();
+    //scan.close();
     return input;
   }
 
@@ -63,10 +63,11 @@ public class Reader {
   }
 
   public boolean readBool(String question,char yes,char no) {
-    char input = readChar(question);
+    char input;
     boolean isYes = false;
     boolean correct = false;
     do {
+      input = readChar(question);
       correct = input == no;
       if (input == yes) {
         correct = true;
