@@ -9,7 +9,6 @@ public class Keys {
     if(keys.length==0) throw new RuntimeException();
     if(keys==null) throw new RuntimeException();
     this.keys = keys;
-
   }
 
   public int getLength(){
