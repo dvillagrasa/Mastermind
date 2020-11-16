@@ -31,6 +31,7 @@ public class CodeBreaker {
   }
 
   public void receiveKeys(Keys keys){
+    if (keys.getLength() != this.lengthCode) throw new RuntimeException();
     // Method for an Artificial Intelligence to overwrite it.
   }
 
