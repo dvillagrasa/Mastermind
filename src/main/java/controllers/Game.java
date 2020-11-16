@@ -63,7 +63,8 @@ public class Game {
     }
 
     public boolean isGameOver() {
-        return hasCodeBreakerLost() || hasCodeBreakerWon();
+        this.gameOver = hasCodeBreakerLost() || hasCodeBreakerWon();
+        return gameOver;
     }
    
     public boolean hasCodeBreakerWon() {
@@ -71,7 +72,7 @@ public class Game {
     }
 
     public boolean hasCodeBreakerLost() {
-        return !therAreAttempts();
+        return !therAreAttempts() && !hasCodeBreakerWon();
     }
     
 }
