@@ -1,3 +1,5 @@
+
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -104,6 +106,48 @@ public class BoardTest {
         Assertions.assertTrue(board.isSecretCode(code1));
         Assertions.assertFalse(board.isSecretCode(code2));
         Assertions.assertTrue(board.isSecretCode(new Code(colorsArray)));
+    }
+    /*Test de Caixa Negra :
+     * Pairwise testing */
+    @Test
+    void testPairwiseTesting_sendGuess() {
+        Board board = new Board(new Code(new int[]{0,1,2}),11);
+        
+        //1  x x ●
+        Keys key1 = new Keys(new KeyPeg[]{KeyPeg.DoesNotExistColor,KeyPeg.DoesNotExistColor,KeyPeg.CorrectPosition});
+        Assertions.assertEquals(key1, board.sendGuess(new Code(new int[]{3,3,2})));
+
+        //2  x ● x
+        Keys key2 = new Keys(new KeyPeg[]{KeyPeg.DoesNotExistColor,KeyPeg.CorrectPosition,KeyPeg.DoesNotExistColor});
+        Assertions.assertEquals(key2, board.sendGuess(new Code(new int[]{3,1,3})));
+
+        //3  x ○ ○
+        Keys key3 = new Keys(new KeyPeg[]{KeyPeg.DoesNotExistColor,KeyPeg.ExistColor,KeyPeg.ExistColor});
+        Assertions.assertEquals(key3, board.sendGuess(new Code(new int[]{3,0,0})));
+
+        //4  ○ x ○
+        Keys key4 = new Keys(new KeyPeg[]{KeyPeg.ExistColor,KeyPeg.DoesNotExistColor,KeyPeg.ExistColor});
+        Assertions.assertEquals(key4, board.sendGuess(new Code(new int[]{1,3,1})));
+        //5  ○ ● ●
+        Keys key5 = new Keys(new KeyPeg[]{KeyPeg.ExistColor,KeyPeg.CorrectPosition,KeyPeg.CorrectPosition});
+        Assertions.assertEquals(key5, board.sendGuess(new Code(new int[]{2,1,2})));
+
+        //6  ○ ○ x
+        Keys key6 = new Keys(new KeyPeg[]{KeyPeg.ExistColor,KeyPeg.ExistColor,KeyPeg.DoesNotExistColor});
+        Assertions.assertEquals(key6, board.sendGuess(new Code(new int[]{2,2,3})));
+
+        //7  ● x x
+        Keys key7 = new Keys(new KeyPeg[]{KeyPeg.CorrectPosition,KeyPeg.DoesNotExistColor,KeyPeg.DoesNotExistColor});
+        Assertions.assertEquals(key7, board.sendGuess(new Code(new int[]{0,3,3})));
+
+        //8  ● ● ○
+        Keys key8 = new Keys(new KeyPeg[]{KeyPeg.CorrectPosition,KeyPeg.CorrectPosition,KeyPeg.ExistColor});
+        Assertions.assertEquals(key8, board.sendGuess(new Code(new int[]{0,1,1})));
+
+        //9  ● ○ ●
+        Keys key9 = new Keys(new KeyPeg[]{KeyPeg.CorrectPosition,KeyPeg.ExistColor,KeyPeg.CorrectPosition});
+        Assertions.assertEquals(key9, board.sendGuess(new Code(new int[]{0,0,2})));
+
     }
 }
 
