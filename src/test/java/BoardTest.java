@@ -93,5 +93,15 @@ public class BoardTest {
         Assertions.assertThrows(RuntimeException.class, () -> board.sendGuess(guess));
     }
 
+    /*Test de Caixa Negra :
+     * Particions equivalents */
+    @Test
+    void testIsSecretCode() {
+        Code code1 = new Code(new int[]{5,5,5,5});
+        Code code2 = new Code(new int[]{5,4,5,5});
+        Board board = new Board(code1,1);
+        Assertions.assertTrue(board.isSecretCode(code1));
+        Assertions.assertFalse(board.isSecretCode(code2));
+    }
 }
 

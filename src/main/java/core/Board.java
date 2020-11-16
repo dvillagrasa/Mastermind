@@ -1,7 +1,5 @@
 package core;
 
-
-
 public class Board {
     private int numAttempts;
     private Code secretCode;
@@ -26,6 +24,11 @@ public class Board {
 
     public Keys sendGuess(Code guess) {
         if(numAttempts == 0) throw new RuntimeException();
+
+        int actualPosition = keys.length - numAttempts;
+        
+        attempts[actualPosition] = guess;
+
         KeyPeg[] keyPegArray = new KeyPeg[guess.getLenght()];
         for (int i = 0; i < keyPegArray.length; i++) {
             if(secretCode.correctPosition(guess.getCode()[i],i)){
@@ -35,11 +38,14 @@ public class Board {
             }else keyPegArray[i]=KeyPeg.DoesNotExistColor;
         }
         Keys generatedKeys = new Keys(keyPegArray);
-        this.keys[keys.length - numAttempts] = generatedKeys;
+        this.keys[actualPosition] = generatedKeys;
         numAttempts--;
         return generatedKeys;
     }
 
+    public boolean isSecretCode(Code guess) {
+        return false;
+    }
 
     public Code[] getAttempts() {
         return attempts;
