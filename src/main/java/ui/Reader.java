@@ -33,10 +33,15 @@ public class Reader {
     int input;
     do {
       input =  readInt(question);
-      correct = input >= min && input <= max;
+      correct = isInside(input, min, max);
     } while(!correct);
     return input;
   }
+
+  public boolean isInside(int input,int min,int max) {
+    return input >= min && input <= max;
+  }
+
   /*Llegeix un caracter*/
   public char readChar() {
     Scanner scan = new Scanner(System.in);
