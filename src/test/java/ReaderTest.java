@@ -6,7 +6,9 @@ import ui.Reader;
 public class ReaderTest {
 
     /*Test de Caixa Blanca:
-     * Condition Coverage: provem totes les condicions*/
+     * Condition Coverage: provem totes les condicions
+     * Decision Coverage: provem totes les decisions predicat
+     * */
     @Test
     void testConditionIsInside(){
         Reader reader = new Reader();
