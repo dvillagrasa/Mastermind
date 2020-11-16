@@ -54,6 +54,7 @@ public class GameTest {
         game1.start();
         Assertions.assertTrue(game1.hasCodeBreakerWon());
         Assertions.assertFalse(game1.hasCodeBreakerLost());
+        Assertions.assertTrue(game1.isGameOver());
 
         // On second attempt
         Code[] guesses2 =  {
@@ -65,6 +66,7 @@ public class GameTest {
         game2.start();
         Assertions.assertTrue(game2.hasCodeBreakerWon());
         Assertions.assertFalse(game2.hasCodeBreakerLost());
+        Assertions.assertTrue(game2.isGameOver());
 
         // On third attempt
         Code[] guesses3 =  {
@@ -77,6 +79,7 @@ public class GameTest {
         game3.start();
         Assertions.assertTrue(game3.hasCodeBreakerWon());
         Assertions.assertFalse(game3.hasCodeBreakerLost());
+        Assertions.assertTrue(game3.isGameOver());
 
         // On last attempt
         Code[] guesses4 =  {
@@ -90,6 +93,7 @@ public class GameTest {
         game4.start();
         Assertions.assertTrue(game4.hasCodeBreakerWon());
         Assertions.assertFalse(game4.hasCodeBreakerLost());
+        Assertions.assertTrue(game4.isGameOver());
     }
 
     @Test
@@ -109,5 +113,6 @@ public class GameTest {
         game4.start();
         Assertions.assertFalse(game4.hasCodeBreakerWon());
         Assertions.assertTrue(game4.hasCodeBreakerLost());
+        Assertions.assertTrue(game4.isGameOver());
     }
 }
