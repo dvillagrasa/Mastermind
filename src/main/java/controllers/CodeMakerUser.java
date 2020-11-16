@@ -11,11 +11,12 @@ public class CodeMakerUser extends CodeMaker {
         super(numberOfColors, lengthCode);
         this.reader = reader;
     }
-
+    /*Crea un codi*/
     @Override
     public Code generateCode() {
         return new Code(askForArrayOfColors(numberOfColors, lengthCode));
     }
+
 
     private int[] askForArrayOfColors(int numberOfColors, int lengthCode) {
         ui.Printer.println("");

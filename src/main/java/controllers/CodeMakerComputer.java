@@ -10,7 +10,7 @@ public class CodeMakerComputer extends CodeMaker{
   public CodeMakerComputer(int numberOfColors,int lengthCode) {
     super(numberOfColors, lengthCode);
   }
-
+  /*Crea un codi*/
   @Override
   public Code generateCode() {
     ui.Printer.println("");

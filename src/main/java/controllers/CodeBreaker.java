@@ -23,6 +23,7 @@ public class CodeBreaker {
     this.reader = reader;
   }
 
+  /*Retorna un codi */
   public Code askForGuess() {
     ui.Printer.println("");
     ui.Printer.println("Create a Secret Code guess with Code Creator:");
@@ -34,11 +35,11 @@ public class CodeBreaker {
     if (keys.getLength() != this.lengthCode) throw new RuntimeException();
     // Method for an Artificial Intelligence to overwrite it.
   }
-
+  /*Retorna el nombre de colors*/
   public int getNumOfColors() {
     return numOfColors;
   }
-
+  /*Retorna la longitud del codi*/
   public int getLengthCode() {
     return lengthCode;
   }
