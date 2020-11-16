@@ -44,7 +44,7 @@ public class Board {
     }
 
     public boolean isSecretCode(Code guess) {
-        return false;
+        return this.secretCode == guess;
     }
 
     public Code[] getAttempts() {
