@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 
 public class ArrayUtils {
-
+    /*retorna un codi que sera el que s'ha d'endevinar (compost d'integers)*/
     public static int[] getRandomIntArray(int numberOfColors, int lengthCode){
         Utils.Random random = new Utils.Random();
         int[] code = new int[lengthCode];

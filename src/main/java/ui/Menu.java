@@ -4,11 +4,11 @@ import java.util.ArrayList;
 
 public class Menu {
     private ArrayList<Option> options = new ArrayList<>();
-
+    /*Afegeix les opcions al menú*/
     public void addOption2Menu(String name, Action action) {
         options.add(new Option(name,action));
     }
-
+    /*Retorna si la opció seleccionada es una opció correcta o no*/
     public boolean selectOption(int index) {
         try {
             options.get(index).execute();
@@ -17,13 +17,13 @@ public class Menu {
             return false;
         }
     }
-
+    /*Mostra el menu per pantalla (opcions)*/
     public void display() {
         for (int i = 0; i < options.size(); i++) {
             Printer.println(i + " - " + options.get(i).getName());
         }
     }
-
+    /*Retorna el numero de opcions del menu*/
     public int getNumOfOptions() {
         return options.size();
     }
@@ -47,6 +47,7 @@ public class Menu {
         }
 
     }
+    /*Funció que executa la opció seleccionada*/
     public interface Action {
         void execute();
     }

@@ -19,12 +19,12 @@ public class Board {
         keys = new Keys[numAttempts];
         
     }
-
+    /*Retorna el nombre d'oportunitats*/
     public int getNumAttempts() {
         return numAttempts;
     }
 
-
+    /*Rep una suposició de codi secret i retorna les claus de pistes */
     public Keys sendGuess(Code guess) {
         if(numAttempts == 0) throw new RuntimeException();
 
@@ -45,15 +45,15 @@ public class Board {
         numAttempts--;
         return generatedKeys;
     }
-
+    /*Retorna si el codi rebut per parametre es secret*/
     public boolean isSecretCode(Code guess) {
         return this.secretCode.equals(guess);
     }
-
+    /*Retorna les oportunitats*/
     public Code[] getAttempts() {
         return attempts;
     }
-
+    /*Retorna les claus*/
     public Keys[] getKeys() {
         return keys;
     }

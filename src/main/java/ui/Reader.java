@@ -2,7 +2,7 @@ package ui;
 import java.util.Scanner;
 public class Reader {
 
-  
+  /*Llegeix un integer (fa de façana)*/
   public int readInt() {
     Scanner scan = new Scanner(System.in);
     int input;
@@ -11,7 +11,7 @@ public class Reader {
     return input;
   }
 
-
+  /*Fa una pregunta, i si no es un integer (lo introduit), repeteix la pregunta*/
   public int readInt(String question) {
     int input=-1;
     boolean correct = false;
@@ -27,7 +27,7 @@ public class Reader {
     } while(!correct);
     return input;
   }
-
+  /*Fa una pregunta, i si no es un integer (lo introduit) entre un maxim i un minim, repeteix la pregunta*/
   public int readInt(String question,int min, int max) {
     boolean correct = false;
     int input;
@@ -37,7 +37,7 @@ public class Reader {
     } while(!correct);
     return input;
   }
-
+  /*Llegeix un caracter*/
   public char readChar() {
     Scanner scan = new Scanner(System.in);
     char input;
@@ -45,7 +45,7 @@ public class Reader {
     //scan.close();
     return input;
   }
-
+  /*Fa una pregunta i llegeix un caracter*/
   public char readChar(String question) {
     char input= ' ';
     boolean correct = false;
@@ -61,7 +61,7 @@ public class Reader {
     } while(!correct);
     return input;
   }
-
+  /*Llegeix un booleà */
   public boolean readBool(String question,char yes,char no) {
     char input;
     boolean isYes = false;

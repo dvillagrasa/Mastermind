@@ -6,7 +6,7 @@ import core.KeyPeg;
 import core.Keys;
 
 public class Printer {
-
+    /*Escriu per pantalla (strings)*/
     public static void print(String string) {
         System.out.print(string);
     }
@@ -14,18 +14,18 @@ public class Printer {
     public static void println(String string) {
         System.out.println(string);
     }
-
+    /*Escriu per pantalla (integers)*/
     public static void print(int integer) {
         System.out.print(integer);
     }
-
+    /*Escriu per pantalla (strings)*/
     public static void printColorCollection(int numberOfColors) {
         for (int i = 0; i < numberOfColors; i++) {
             print(" "+i+" ");
         }
         println("");        
     }
-
+    /*Escriu per pantalla (strings)*/
     public static void printBoard(Board board) {
         println("");
         println("BOARD:");

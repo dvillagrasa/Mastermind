@@ -15,6 +15,8 @@ import ui.Reader;
 
 public class GameTest {
 
+    /*Test de Caixa Negra:
+     * Particions equivalents (invalides) */
     @Test
     void it_should_throw_RuntimeException_when_Game_is_invalid() {
         CodeMaker codeMaker1 = new CodeMakerComputer(5,5);
@@ -32,6 +34,11 @@ public class GameTest {
         Assertions.assertThrows(RuntimeException.class,() -> new Game(codeMaker3,codeBreaker1,0));
         Assertions.assertThrows(RuntimeException.class,() -> new Game(codeMaker3,codeBreaker1,-1));
     }
+    /*Test de Caixa Blanca:
+     * Loop testing
+     * (comprobem diferents casos en que sortim guanyant)
+     * Condition Coverage  (la totalitat d'aquest test i el seguent)
+     * (ja que posem 1a condicio a true i segona a false o viceversa)*/
 
     @Test
     void testGame_that_you_win_on_different_attempts(){

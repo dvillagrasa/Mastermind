@@ -7,6 +7,7 @@ import mocks.MockReader;
 
 public class GameMakerTest {
 
+
     @Test
     void testCreateGame() {
         // numOfColors, lengthCode, attempts

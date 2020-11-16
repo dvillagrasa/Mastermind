@@ -12,16 +12,16 @@ public class Code {
         if (hasInvalidNumber(code)) throw new RuntimeException();
         this.code = code;
     }
-
+    /*Retorna el codi*/
     public int[] getCode() {
         return this.code;
     }
-
+    /*Retorna la longitud del codi*/
     public int getLenght(){
         return code.length;
     }
 
-
+    /*Funció que ens diu si el caracter introduit es valid o no(qualsevol caracter que no sigui integer)*/
     private boolean hasInvalidNumber(int[] code){
         for (int color : code) {
             if (color < 0) return true;
@@ -30,7 +30,7 @@ public class Code {
         }
         return false;
     }
-
+    /*Retorna si dos codis son iguals*/
     @Override
     public boolean equals(Object obj) {
         if ( obj == null ) return false;
@@ -39,7 +39,7 @@ public class Code {
         return Arrays.equals(this.code, c.code);
     }
 
-
+    /*Retorna si el color introduït existeix tot i no estar a la mateixa posició actual.*/
     public boolean existColor(int color) {
         for (int secretColor : code) {
             if (secretColor == color)
@@ -47,7 +47,7 @@ public class Code {
         }
         return false;
     }
-
+    /*Retorna si el color i la posicio es correcta.*/
     public boolean correctPosition(int color, int pos) {
         return code[pos] == color;
     }

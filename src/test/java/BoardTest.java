@@ -108,7 +108,7 @@ public class BoardTest {
         Assertions.assertTrue(board.isSecretCode(new Code(colorsArray)));
     }
     /*Test de Caixa Negra :
-     * Pairwise testing */
+     * Pairwise testing i Path Coverage (implicit)*/
     @Test
     void testPairwiseTesting_sendGuess() {
         Board board = new Board(new Code(new int[]{0,1,2}),11);
