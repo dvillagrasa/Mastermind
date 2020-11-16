@@ -24,6 +24,10 @@ public class Menu {
         }
     }
 
+    public int getNumOfOptions() {
+        return options.size();
+    }
+
     public class Option{
 
         private String name;
