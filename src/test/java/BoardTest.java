@@ -75,10 +75,22 @@ public class BoardTest {
     /*Test de Caixa Negra :
      * Particions equivalents(valides)  */
     @Test
-    void testGetNumberOpportunities(){
+    void testGetNumberAttempts(){
         Board board = new Board(secretCode,  1);
-        Assertions.assertNotEquals(3,board.getOpportunities());
-        Assertions.assertEquals(1,board.getOpportunities());
+        Assertions.assertNotEquals(3,board.getNumAttempts());
+        Assertions.assertEquals(1,board.getNumAttempts());
+    }
+
+    /*
+    Test de Caixa Negra :
+     * Cas d'us(invalid): No es pot enviar un Guess si ja no hi ha Attempts. 
+    */
+    @Test
+    void testSendGuess_should_throw_RuntimeException_when_there_are_not_attempts() {
+        Board board = new Board(secretCode,1);
+        Code guess = new Code(new int[]{1,1,1,1});
+        board.sendGuess(guess);
+        Assertions.assertThrows(RuntimeException.class, () -> board.sendGuess(guess));
     }
 
 }
