@@ -51,6 +51,8 @@ public class CodeBreakerTest {
     Assertions.assertThrows(RuntimeException.class , () -> new CodeBreaker(8,8,null));
   }
 
+  /*Test de Caixa Negra:
+   * Particions equivalents(invalides)*/
   @Test
   void testReceiveKeys() {
     CodeBreaker codeBreaker = new CodeBreaker(4,4,reader);
