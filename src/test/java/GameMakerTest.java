@@ -15,8 +15,19 @@ public class GameMakerTest {
             {5,5,5},
             {8,8,8}
         };
+
+        //Typical use case with CodeMakerComputer
         for (int[] response : responsesArray) {
-            GameMaker gameMaker = new GameMaker(new MockReader(response));
+            GameMaker gameMaker = new GameMaker(new MockReader(response,true));
+            Game game = gameMaker.createGame();
+            Assertions.assertEquals(response[0], game.getNumOfColors());
+            Assertions.assertEquals(response[1], game.getLengthCode());
+            Assertions.assertEquals(response[2], game.getAttempts());
+        }
+
+        //Typical use case with CodeMakerUser
+        for (int[] response : responsesArray) {
+            GameMaker gameMaker = new GameMaker(new MockReader(response,false));
             Game game = gameMaker.createGame();
             Assertions.assertEquals(response[0], game.getNumOfColors());
             Assertions.assertEquals(response[1], game.getLengthCode());

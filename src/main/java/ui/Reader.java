@@ -7,12 +7,11 @@ public class Reader {
     Scanner scan = new Scanner(System.in);
     int input;
     input = scan.nextInt();
+    //scan.close();
     return input;
   }
 
 
-
-  //verificar que el numero esta entre los limites
   public int readInt(String question) {
     int input=-1;
     boolean correct = false;
@@ -23,7 +22,7 @@ public class Reader {
         correct = true;
 
       } catch (Exception e) {
-        Printer.println("Número invalid");
+        Printer.println("Invalid number");
       }
     } while(!correct);
     return input;
@@ -37,6 +36,44 @@ public class Reader {
       correct = input >= min && input <= max;
     } while(!correct);
     return input;
+  }
+
+  public char readChar() {
+    Scanner scan = new Scanner(System.in);
+    char input;
+    input = scan.next().charAt(0);
+    scan.close();
+    return input;
+  }
+
+  public char readChar(String question) {
+    char input= ' ';
+    boolean correct = false;
+    do {
+      Printer.println(question);
+      try {
+        input = readChar();
+        correct = true;
+
+      } catch (Exception e) {
+        Printer.println("Invalid chararacter ");
+      }
+    } while(!correct);
+    return input;
+  }
+
+  public boolean readBool(String question,char yes,char no) {
+    char input = readChar(question);
+    boolean isYes = false;
+    boolean correct = false;
+    do {
+      correct = input == no;
+      if (input == yes) {
+        correct = true;
+        isYes = true;
+      }      
+    } while (!correct);
+    return isYes;
   }
 
   

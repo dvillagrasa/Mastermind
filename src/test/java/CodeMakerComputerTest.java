@@ -12,7 +12,7 @@ class CodeMakerComputerTest {
    * Particions equivalents(valides)*/
   @Test
   public void testGenerateCode() {
-      CodeMakerComputer codeMaker = new CodeMakerComputer(2,5);
+      CodeMakerComputer codeMaker = new CodeMakerComputer(8,8);
       Code code1 = codeMaker.generateCode();
       Code code2 = codeMaker.generateCode();
       Assertions.assertNotEquals(code1, code2);

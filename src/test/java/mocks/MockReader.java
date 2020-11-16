@@ -8,6 +8,7 @@ public class MockReader extends Reader {
     private int[] responses;
     private int lastResponse = 0;
     private boolean isSequence = false;
+    private boolean boolResponse;
 
     public MockReader(int response) {
         super();
@@ -15,10 +16,24 @@ public class MockReader extends Reader {
         isSequence = false;
     }
 
+    public MockReader(int response, boolean boolResponse) {
+        super();
+        this.response = response;
+        isSequence = false;
+        this.boolResponse = boolResponse;
+    }
+
     public MockReader(int[] responses) {
         super();
         this.responses = responses;
         isSequence = true;
+    }
+
+    public MockReader(int[] responses, boolean boolResponse) {
+        super();
+        this.responses = responses;
+        isSequence = true;
+        this.boolResponse = boolResponse;
     }
 
     public void setResponse(int response) {
@@ -28,7 +43,7 @@ public class MockReader extends Reader {
     public void setResponses(int[] responses) {
         this.responses = responses;
     }
-    
+
     private int nextResponse() {
         int actualResponse = isSequence ? responses[lastResponse % responses.length] : response;
         lastResponse++;
@@ -50,8 +65,13 @@ public class MockReader extends Reader {
         return readInt(question);
     }
 
-    
+    @Override
+    public boolean readBool(String question, char yes, char no) {
+        return boolResponse;
+    }
 
+    
+    
    
     
     
