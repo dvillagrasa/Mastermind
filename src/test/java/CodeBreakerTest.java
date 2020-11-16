@@ -5,6 +5,8 @@ import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import controllers.CodeBreaker;
+import core.KeyPeg;
+import core.Keys;
 import ui.Reader;
 
 
@@ -49,6 +51,12 @@ public class CodeBreakerTest {
     Assertions.assertThrows(RuntimeException.class , () -> new CodeBreaker(8,8,null));
   }
 
+  @Test
+  void testReceiveKeys() {
+    CodeBreaker codeBreaker = new CodeBreaker(4,4,reader);
+    Keys invalidKeys = new Keys(new KeyPeg[]{KeyPeg.CorrectPosition});
+    Assertions.assertThrows(RuntimeException.class , () -> codeBreaker.receiveKeys(invalidKeys));
+  }
 
  
 }
