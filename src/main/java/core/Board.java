@@ -34,7 +34,10 @@ public class Board {
                 keyPegArray[i]=KeyPeg.ExistColor;
             }else keyPegArray[i]=KeyPeg.DoesNotExistColor;
         }
-        return new Keys(keyPegArray);
+        Keys generatedKeys = new Keys(keyPegArray);
+        this.keys[keys.length - numAttempts] = generatedKeys;
+        numAttempts--;
+        return generatedKeys;
     }
 
 
